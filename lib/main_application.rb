@@ -8,7 +8,7 @@ require_relative './cart'
 
 class MainApplication
   def initialize
-    @page = Nokogiri::HTML(URI.open('https://rozetka.com.ua/ua/'))
+    @page = Nokogiri::HTML(URI.open('https://www.olx.ua/'))
     @item1 = Item.new(@page, 1)
     @item2 = Item.new(@page, 3)
   end
@@ -28,8 +28,11 @@ class MainApplication
       cart.add_item(content)
     end
 
-    cart.delete_items([])
+    # cart.delete_items([1])
+    # cart.remove_item(0)
     cart.show_all_items
     cart.save_to_json
+    cart.save_to_file
+    cart.save_to_cvs
   end
 end

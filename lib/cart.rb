@@ -15,17 +15,14 @@ class Cart
   end
 
   def save_to_file()
-    # convert to string
-    File.write("#{@file_path}/#{@file_name}.txt", @items_list)
+    File.write("#{@file_path}/#{@file_name}.txt", @items_list.to_s)
   end
 
   def save_to_json()
-    # convert to json
     File.write("#{@file_path}/#{@file_name}.json", @items_list.to_json)
   end
 
   def save_to_cvs()
-    # convert to csv
     File.write("#{@file_path}/#{@file_name}.csv", @items_list)
   end
 end
