@@ -1,6 +1,5 @@
 class Parser
   def parse_item(item)
-
     elements = item.page.css('#gallerywide > li')
     selected_item = elements[item.order_number]
     title = selected_item.css('.normal > a > strong').text

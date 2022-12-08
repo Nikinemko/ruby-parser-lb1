@@ -1,4 +1,5 @@
 require 'json'
+require "csv"
 require_relative './item_container'
 
 class Cart
@@ -23,6 +24,7 @@ class Cart
   end
 
   def save_to_cvs()
-    File.write("#{@file_path}/#{@file_name}.csv", @items_list)
+    content = @items_list.map(&:values)
+    File.write("#{@file_path}/#{@file_name}.csv", content.map(&:to_csv).join)
   end
 end
