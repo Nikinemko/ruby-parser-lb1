@@ -4,7 +4,6 @@ require_relative './item_container'
 
 class Cart
   include ClassMethods
-  include InstanceMethods
 
   attr_reader :file_path, :file_name
   attr_accessor :items_list

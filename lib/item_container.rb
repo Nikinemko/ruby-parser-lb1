@@ -1,7 +1,9 @@
 module ClassMethods
-  def self.included(_base)
-    # Initialize module.
+def self.included(class_instance)
+    class_instance.extend(ClassMethods)
+    class_instance.class_eval { include InstanceMethods }
   end
+
 end
 
 module InstanceMethods

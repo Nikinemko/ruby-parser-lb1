@@ -15,15 +15,14 @@ class MainApplication
 
   def run
     cart = Cart.new('./', 'test_name')
+    parser = Parser.new
 
     @item1.info do
-      parser = Parser.new
       content = parser.parse_item(@item1)
       cart.add_item(content)
     end
 
     @item2.info do
-      parser = Parser.new
       content = parser.parse_item(@item2)
       cart.add_item(content)
     end
